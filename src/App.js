@@ -1,24 +1,49 @@
-import logo from './logo.svg';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 
+
+
+// context
+import {AuthenticationProvider} from './hooks/useAuth'
+
+// pages
+import Login from './pages/Login';
+import About from './pages/About';
+import NotFound from './pages/NotFound';
+import Home from './pages/Home';
+import Dashboard from './pages/Dashboard';
+
+// components
+import Header from './components/Header';
+import StickyFooter from './components/Footer/StickyFooter';
+
 function App() {
+
+    // we check auth data from local storage and put it as an object to user
+    const user = JSON.parse(localStorage.getItem('dsg') )
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* // we give user, user is sendingg to Authentication provider, and then is set as authDate (useState) */}
+      <AuthenticationProvider user = {user}>  {/* everything below are children */}
+        <Header/>
+
+        <div className="App">
+
+          <BrowserRouter>
+            <Routes>
+              <Route index element={<Home/>}></Route>
+              <Route path="/about" element={<About/>}/>
+              <Route path="/login" element={<Login/>}/>
+              <Route path="/dashboard" element={<Dashboard/>}/>
+              <Route path="*" element={<NotFound/>}/>
+            </Routes>
+          </BrowserRouter>
+          
+          
+      </div>
+      <StickyFooter/> 
+      </AuthenticationProvider>  
+    </>
   );
 }
 
