@@ -1,2 +1,2 @@
-/login/* http://dsgdev2loadbalancer-1901974022.eu-central-1.elb.amazonaws.com/api/:splat 200!
+/api/* http://dsgdev2loadbalancer-1901974022.eu-central-1.elb.amazonaws.com/api/:splat 200!
 /* /index.html 200
