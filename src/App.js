@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.css';
+import './assets/css/App.scss';
 
 
 
@@ -25,7 +25,7 @@ function App() {
     <>
       {/* // we give user, user is sendingg to Authentication provider, and then is set as authDate (useState) */}
       <AuthenticationProvider user = {user}>  {/* everything below are children */}
-        <Header/>
+        {/* <Header/> */}
 
         <div className="App">
 
@@ -41,7 +41,7 @@ function App() {
           
           
       </div>
-      <StickyFooter/> 
+      {/* <StickyFooter/>  */}
       </AuthenticationProvider>  
     </>
   );

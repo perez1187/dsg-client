@@ -63,7 +63,7 @@ function ResponsiveAppBar() {
   
 
   return (
-    <AppBar position="static"
+    <AppBar
         style={{
           background:"black",
           height:"8.125rem",
@@ -73,6 +73,7 @@ function ResponsiveAppBar() {
           alignItems: "center",
           justifyContent: "center"
         }}
+        className='hm-header'
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>

@@ -1,5 +1,4 @@
 import React from 'react'
-import './Sidebar.css'
 // import Logo from '../../imgs/logo.png'
 import { UilSignOutAlt } from "@iconscout/react-unicons";
 

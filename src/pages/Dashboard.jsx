@@ -10,6 +10,7 @@ import {useAuth} from '../hooks/useAuth'
 import SignIn from '../components/signIn/SignIn'
 import Sidebar from '../components/Sidebar/Sidebar'
 import SelectDashboard from '../components/SelectDashboard/SelectDashboard'
+import LayoutTwo from '../components/Layouts/LayoutTwo'
 
 
 const Dashboard = () => {
@@ -17,19 +18,19 @@ const Dashboard = () => {
   const {authData} =useAuth()
 
   return (
-    <div className="dashApp">
+    <LayoutTwo>
+    
       {authData ?
-        <div className="dashAppGlass">
-          <Sidebar/>
+        <>
           <SelectDashboard/>
-        </div>
+        </>
   
       :
         <SignIn/>
     }
       
     
-    </div>
+    </LayoutTwo>
     
   )
 }

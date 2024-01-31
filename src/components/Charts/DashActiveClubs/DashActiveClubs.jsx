@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
-
+import { Box, Typography } from '@mui/material'
 // css
 import './DashActiveClubs.css'
 
@@ -38,7 +38,8 @@ const columns = [
 
 export default function DataTable() {
   return (
-    <div className='dashActiveClubs' >
+    <Box className="cmmn-box">
+      <Typography component="h4" className='cmmn-box-title'>Active Clubs</Typography>
       {/* <span>Active Clubs</span> */}
       <DataGrid
         rows={dashActiveXlubsRows}
@@ -52,6 +53,6 @@ export default function DataTable() {
         // checkboxSelection
 
       />
-    </div>
+    </Box>
   );
 }

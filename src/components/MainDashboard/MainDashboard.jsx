@@ -1,26 +1,19 @@
 import React from 'react'
 import './MainDashboard.css'
-
+import { Typography } from '@mui/material'
 import RevenueHistory from '../Charts/RevenueHistory/RevenueHistory'
 import DashActiveClubs from '../Charts/DashActiveClubs/DashActiveClubs'
+import TotalRevenue from '../dashboard/TotalRevenue'
 // import StickyFooter from '../Footer/StickyFooter';
 
 
 const MainDashboard = () => {
   return (
-    <div className="MainDashboard">
-    
+    <>
+    <Typography component="h2" className='def-title'>Dashboard</Typography>
       
-      {/* title */}
-      <div className="dashTitle" >
-        Dashboard
-      </div>
-
       {/* Revenue numbers */}
-      <div className="dashRev">
-        <span>Total Revenue</span>
-        <span>11M</span>
-      </div>
+      <TotalRevenue />
 
       {/* revene history chart */}
 
@@ -30,7 +23,7 @@ const MainDashboard = () => {
       <DashActiveClubs/>
       {/* <StickyFooter/> */}
       
-    </div>
+    </>
     
   )
 }
