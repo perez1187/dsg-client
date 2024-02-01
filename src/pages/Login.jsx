@@ -1,5 +1,6 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import SignIn from '../components/signIn/SignIn'
+import LayoutOne from '../components/Layouts/LayoutOne';
 
 function Login() {
   useEffect(() => {
@@ -9,11 +10,11 @@ function Login() {
     };
   }, []);
   return (
-    <div
-        style={{background: "black"}}
-    >
-        <SignIn/>
-    </div>
+    <LayoutOne>
+      <div  style={{ background: "black" }}>
+        <SignIn />
+      </div>
+    </LayoutOne>
   )
 }
 
