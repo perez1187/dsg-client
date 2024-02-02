@@ -304,6 +304,32 @@ h2.def-title {
       }
     }
   }
+  .MuiDataGrid-columnHeaders {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%; 
+    color: #121619;
+    background-color: #F2F4F8;
+  }
+  .MuiDataGrid-cell {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; 
+    color: #121619;
+  }
+}
+
+button.menuBtn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  min-width: inherit;
+  height: auto;
+  top: 8px;
+  position: relative;
 }
 @media screen and (max-width: 991px) {
   h2.def-title {font-size: 32px;}
@@ -329,4 +355,354 @@ h2.def-title {
 
 .black-body {
   background-color: black !important;
+}
+
+// Reports css
+.m-b-24 {
+  margin-bottom: 24px !important;
+}
+.m-t-24 {
+  margin-top: 24px !important;
+}
+.dat_pic_box {
+  display: flex;
+  .def_date_pickr {
+    border-radius: 20px;
+    border: 1px solid #C1C7CD !important;
+    background: #FFF;
+    outline: none !important;
+    box-shadow: none !important;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 15px;
+    svg {
+      color: #697077;
+    }
+    &:hover  {
+      border-color: #C1C7CD !important;
+    }
+    .rs-input-group {
+      border: none;
+      outline: none !important;
+      &:hover {border: none !important;}
+      input {
+        color: #21272A;
+        font-family: $f_primary;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 0.5px;
+        background: transparent;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        padding-left: 26px;
+        width: 239px;
+      }
+      .rs-input-group-addon {
+        padding: 0 18px 0 0;
+      }
+    }
+  }
+}
+.def_form_cotrl {
+  margin: 0 !important;
+  width: 100%;
+  .def_select {
+    color: #21272A;
+    font-family: $f_primary;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.5px;
+    height: 52px;
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid #C1C7CD !important;
+    background: #FFF;
+    padding: 0 0 0 26px;
+    box-shadow: none !important;
+    outline: none !important;
+    &:hover {
+      border-color: #C1C7CD !important;
+    }
+    .MuiSelect-select {
+      font-family: $f_primary;
+      display: flex;
+      align-items: center;
+      padding: 0;
+    }
+    fieldset {
+      border: none !important;
+      outline: none;
+    }
+  }
+}
+.whiteBox {
+  border: 1px solid #DDE1E6;
+  background: #FFF;
+  padding: 16px 16px;
+  width: 100%;
+  height: 100%;
+  p {
+    color: #697077;
+    font-family: $f_primary;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+  .innrFlx {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h1 {
+      color: #21272A;
+      font-family: $f_primary;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 110%;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      text-overflow: ellipsis;
+    }
+    span {
+      border-radius: 12px;
+      background: #F2F4F8;
+      padding: 3px 12px;
+      color: #21272A;
+      text-align: center;
+      font-family: $f_primary;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%;
+      margin-left: 5px;
+    }
+  }
+}
+
+.cmmn-table {
+  .MuiPaper-elevation {
+    border-radius: 0;
+    box-shadow: none !important;
+  }
+  table {
+    box-shadow: none !important;
+    border-radius: 0;
+  }
+}
+.mony_box {
+  padding-bottom: 24px;
+}
+
+.inpt_pernt {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #C1C7CD;
+  padding: 5px 0;
+  svg {
+    margin-right: 8px;
+    font-size: 25px;
+    color: #697077;
+  }
+  input {
+    width: 100%;
+    font-size: 16px;
+    line-height: 22.4px;
+    font-weight: 400;
+    font-family: $f_primary;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+  }
+}
+
+.pokerLinkBx {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .pokerBox {
+    background: #fff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // min-height: 200px;
+    img {
+      width: 100%;
+    }
+  }
+  p {
+    color: #121619;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    text-align: center;
+    font-family: $f_primary;
+    margin-top: 30px;
+  }
+}
+.tab_and_detpckr {
+  display: flex;
+  align-items: center;
+  // border-bottom: 1px solid #DDE1E6;
+  width: 100%;
+}
+.tabs_main {
+  border-bottom: 1px solid #DDE1E6;
+  height: 59px;
+  .tabsPernt {
+    color: #21272A;
+    font-family: $f_primary;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+    padding: 10px 0;
+    margin-right: 24px;
+    height: auto;
+    min-width: inherit;
+    &:last-child {margin-right: 0;}
+    .sevenBox {
+      border-radius: 12px;
+      background: #697077;
+      height: 18px;
+      width: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: $f_primary;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%;
+    }
+    .MuiTouchRipple-root {display: none;}
+  }
+  .MuiTabs-indicator {
+    background: #001D6C;
+    bottom: 13px;
+  }
+}
+.tabs_main .tabsPernt.Mui-selected {
+  color: #001D6C;
+}
+.tabsPenal {
+  padding: 24px 0 !important;
+}
+.userBox {
+  display: flex;
+  align-items: center;
+  img {margin-right: 8px;}
+  p {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    color: #121619;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .poker_bros {
+    .costomGrid {
+      width: 20%;
+      flex-basis: 20%;
+    }
+  }
+}
+@media screen and (max-width: 575px) {
+  .dat_pic_box .def_date_pickr .rs-input-group input {
+    padding-left: 15px;    
+    font-size: 14px;
+  }
+  .dat_pic_box .def_date_pickr {
+    height: 45px;
+  }
+  .dat_pic_box .def_date_pickr .rs-input-group .rs-input-group-addon {
+    padding: 0 12px 0 0;
+  }
+  .def_form_cotrl .def_select {
+    font-size: 14px;
+    height: 45px;
+    padding: 0 0 0 14px;
+  }
+  .m-b-24 {
+    margin-bottom: 20px !important;
+  }
+  .m-t-24 {
+    margin-top: 20px !important;
+  }
+  .whiteBox {
+    padding: 10px 8px;
+    p {
+      font-size: 12px;
+    }
+    .innrFlx {
+      h1 {
+        font-size: 14px;
+        line-height: 15px;
+      }
+      span {
+        padding: 3px 5px;
+        font-size: 10px;
+
+      }
+    }
+  }
+  .pokerLinkBx p {
+    margin-top: 18px;
+  }
+}
+.dat_pic_boxv2 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: -59px;
+  position: relative;
+  button {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    border: none;
+    border-bottom: 1px solid #C1C7CD;
+    background-color: #fff;
+    padding: 10px 15px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    .dtpckr {
+      color: #697077;
+      margin-left: 6px;
+      font-size: 18px;
+    }
+    .mdd_arrow {
+      background: #DDE1E6;
+      color: #697077;
+      padding: 10px;
+      margin: -10px 10px;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .dat_pic_boxv2 {
+    margin-bottom: 10px;
+    button {font-size: 14px;}
+  }
 }

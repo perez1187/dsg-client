@@ -26,9 +26,12 @@ const Dashboard = () => {
             <SelectDashboard/>
           </LayoutTwo>
         :
-          <LayoutOne>
-            <SignIn/>
-          </LayoutOne>
+          <LayoutTwo>
+            <SelectDashboard/>
+          </LayoutTwo>
+          // <LayoutOne>
+          //   <SignIn/>
+          // </LayoutOne>
       }
     </>
 
