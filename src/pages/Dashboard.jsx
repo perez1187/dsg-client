@@ -11,6 +11,7 @@ import SignIn from '../components/signIn/SignIn'
 import Sidebar from '../components/Sidebar/Sidebar'
 import SelectDashboard from '../components/SelectDashboard/SelectDashboard'
 import LayoutTwo from '../components/Layouts/LayoutTwo'
+import LayoutOne from '../components/Layouts/LayoutOne'
 
 
 const Dashboard = () => {
@@ -18,20 +19,19 @@ const Dashboard = () => {
   const {authData} =useAuth()
 
   return (
-    <LayoutTwo>
     
+    <>      
       {authData ?
-        <>
-          <SelectDashboard/>
-        </>
-  
-      :
-        <SignIn/>
-    }
-      
-    
-    </LayoutTwo>
-    
+          <LayoutTwo>
+            <SelectDashboard/>
+          </LayoutTwo>
+        :
+          <LayoutOne>
+            <SignIn/>
+          </LayoutOne>
+      }
+    </>
+
   )
 }
 

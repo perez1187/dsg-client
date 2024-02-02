@@ -82,6 +82,13 @@ export default function SignIn() {
         }   
   };
 
+  React.useEffect(() => {
+    document.body.classList.add("black-body");
+    return () => {
+      document.body.classList.remove("black-body");
+    };
+  }, []);
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
