@@ -1,4 +1,4 @@
-.HeaderButton{
+/* .HeaderButton{
     color: white !important;
     text-align: center !important;
     font-family: Poppins !important;
@@ -6,13 +6,13 @@
     font-style: normal !important;
     font-weight: 400 !important;
     line-height: normal !important;
-}
+} */
 
-.HeaderLogo{
+/* .HeaderLogo{
     width: 7.9375rem !important;
     height: 3.375rem !important;
     flex-shrink: 0 !important;
-}
+} */
 
 @media screen and (max-width: 900px) {
     .HeaderButton{

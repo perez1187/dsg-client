@@ -11,7 +11,8 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 // css
 import "./Header.css"
@@ -61,28 +62,22 @@ function ResponsiveAppBar() {
   // navigate(href);          
   //         };
   
+  const [language, setLanguage] = React.useState('');
+  const handleLanguageChange = (event) => {
+    setLanguage(event.target.value);
+  };
 
   return (
-    <AppBar
-        style={{
-          background:"black",
-          height:"8.125rem",
-          flexShrink: "0",
-          position:"relative",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center"
-        }}
-        className='hm-header'
-    >
+    <>
+    <AppBar className='header'>
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
+        <Toolbar disableGutters className="AAAAAAAA">
+          
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -92,12 +87,11 @@ function ResponsiveAppBar() {
               color: 'inherit',
               textDecoration: 'none',
             }}
-            
           >
             <img src ={Logo} alt="logo" className='HeaderLogo' />
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }} className="risiwClass">
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -105,6 +99,7 @@ function ResponsiveAppBar() {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
+              className="toggel_btn"
             >
               <MenuIcon />
             </IconButton>
@@ -126,7 +121,6 @@ function ResponsiveAppBar() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {/* Menu Box small screen */}
               {pages.map((page) => (
                 <MenuItem 
                   key={page.name} 
@@ -177,10 +171,9 @@ function ResponsiveAppBar() {
             }
             </Menu>
           </Box>
-          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
-
-          {/* Logo full screen */}
+          
           <Typography
+            className="logoPernt"
             variant="h5"
             noWrap
             component="a"
@@ -196,20 +189,9 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-             <img src ={Logo} alt="logo" />
+            <img src ={Logo} alt="logo" className='HeaderLogo' />
           </Typography>
-
-          {/* Menu Box full screen */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'none' , md: 'flex' } }}
-            style={{
-              position:"relative",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap:"2.5rem"
-
-            }}
-          >
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }} className="all_link_hedr">
             {pages.map((page) => (
               <Button
                 key={page.name}
@@ -221,25 +203,21 @@ function ResponsiveAppBar() {
                 {page.name}
               </Button>
             ))}
-
-              {/* Dashboard only shows for login users */}
-              {/* {authData ?
-                <Button
-                  onClick={handleCloseNavMenu}
-                  href="/dashboard"
-                  sx={{ my: 2, color: 'white', display: 'block', textTransform: 'none' }}
-                  className='HeaderButton'
-                >
-                  Dashboard
-                </Button>
-                : <></>
-             
-              }                 */}
-                                                               
           </Box>
-          
-          
-          {/* Avatar menu full screen */}
+          <Box className="hedrSelct_pernt">
+            <FormControl sx={{ m: 1, minWidth: 120 }} className='def_form_cotrl'>
+              <Select
+                  value={language}
+                  onChange={handleLanguageChange}
+                  displayEmpty
+                  inputProps={{ 'aria-label': 'Without label' }}
+                  className='def_select'
+              >
+                  <MenuItem value="">EN</MenuItem>
+                  <MenuItem value={10}>CH</MenuItem>
+              </Select>
+          </FormControl>  
+          </Box>
           {authData ? 
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
@@ -284,14 +262,184 @@ function ResponsiveAppBar() {
                 onClick={handleCloseNavMenu}
                 href="/login"
                 sx={{ my: 2, color: 'white', display: 'block', textTransform: 'none' }}
-                className='HeaderButton'
+                className='sign_btn'
               >
-                Login
+                Sign in
               </Button>
           }
         </Toolbar>
       </Container>
     </AppBar>
+    
+    {/* <AppBar
+        style={{
+          background:"black",
+          height:"8.125rem",
+          flexShrink: "0",
+          position:"relative",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center"
+        }}
+        className='hm-header'
+    >
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            href="/"
+            sx={{
+              mr: 2,
+              display: { xs: 'none', md: 'flex' },
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+            
+          >
+            <img src ={Logo} alt="logo" className='HeaderLogo' />
+          </Typography>
+
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}
+            >
+              {pages.map((page) => (
+                <MenuItem 
+                  key={page.name} 
+                  onClose={handleCloseNavMenu}
+                  href={page.href}
+                >
+                 
+                  <Button
+                    key={page.name}
+                    onClick={handleCloseNavMenu}
+                    href={page.href}
+                    sx={{ my: 1, color: 'black', display: 'block',textTransform: 'none' }}               
+                  >
+                    {page.name}
+                  </Button>
+                </MenuItem>
+              ))}
+              {authData  ? 
+                <MenuItem 
+                  onClose={handleCloseNavMenu}
+                 >
+                  <Button
+                    onClick={logout}
+                    href='/'
+                    sx={{ my: 1, color: 'black', display: 'block',textTransform: 'none' }}               
+                  >
+                    Logout
+                  </Button>
+                </MenuItem>
+              :
+                <MenuItem 
+                 onClose={handleCloseNavMenu}
+                >
+                <Button
+                  href='/login'
+                  sx={{ my: 1, color: 'black', display: 'block',textTransform: 'none' }}               
+                >
+                  Login
+                </Button>
+              </MenuItem>                
+            
+            }
+            </Menu>
+          </Box>
+          <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href="#app-bar-with-responsive-menu"
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+             <img src ={Logo} alt="logo" />
+          </Typography>
+
+          <Box sx={{ flexGrow: 1, display: { xs: 'none' , md: 'flex' } }}
+            style={{
+              position:"relative",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap:"2.5rem"
+
+            }}
+          >
+            {pages.map((page) => (
+              <Button
+                key={page.name}
+                onClick={handleCloseNavMenu}
+                href={page.href}
+                sx={{ my: 2, color: 'white', display: 'block',textTransform: 'none' }}
+                className='HeaderButton'
+              >
+                {page.name}
+              </Button>
+            ))}
+
+              Dashboard only shows for login users
+              {authData ?
+                <Button
+                  onClick={handleCloseNavMenu}
+                  href="/dashboard"
+                  sx={{ my: 2, color: 'white', display: 'block', textTransform: 'none' }}
+                  className='HeaderButton'
+                >
+                  Dashboard
+                </Button>
+                : <></>
+             
+              }                
+                                                               
+          </Box>
+          
+          
+          
+        </Toolbar>
+      </Container>
+    </AppBar> */}
+    </>
   );
 }
 export default ResponsiveAppBar;

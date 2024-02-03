@@ -16,6 +16,7 @@ import Dashboard from './pages/Dashboard';
 // components
 import Header from './components/Header';
 import StickyFooter from './components/Footer/StickyFooter';
+import NewReferrals from './pages/NewReferrals';
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
               <Route path="/about" element={<About/>}/>
               <Route path="/login" element={<Login/>}/>
               <Route path="/dashboard" element={<Dashboard/>}/>
+              <Route path="/new-referrals" element={<NewReferrals/>}/>
               <Route path="*" element={<NotFound/>}/>
             </Routes>
           </BrowserRouter>
