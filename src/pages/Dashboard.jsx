@@ -10,6 +10,7 @@ import {useAuth} from '../hooks/useAuth'
 import SignIn from '../components/signIn/SignIn'
 import Sidebar from '../components/Sidebar/Sidebar'
 import SelectDashboard from '../components/SelectDashboard/SelectDashboard'
+import AdminDashboard from '../components/AdminDashboard/AdminDashboard'
 import LayoutTwo from '../components/Layouts/LayoutTwo'
 import LayoutOne from '../components/Layouts/LayoutOne'
 
@@ -26,12 +27,12 @@ const Dashboard = () => {
             <SelectDashboard/>
           </LayoutTwo>
         :
-          <LayoutTwo>
-            <SelectDashboard/>
-          </LayoutTwo>
-          // <LayoutOne>
-          //   <SignIn/>
-          // </LayoutOne>
+          // <LayoutTwo>
+          //   <SelectDashboard/>
+          // </LayoutTwo>
+          <LayoutOne>
+            <SignIn/>
+          </LayoutOne>
       }
     </>
 

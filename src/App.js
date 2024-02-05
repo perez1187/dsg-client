@@ -16,6 +16,12 @@ import Dashboard from './pages/Dashboard';
 // components
 import Header from './components/Header';
 import StickyFooter from './components/Footer/StickyFooter';
+import NewReferrals from './pages/NewReferrals';
+import ForgotPassword from './pages/ForgotPassword';
+import NewPassword from './pages/NewPassword';
+import Verification from './pages/Verification';
+import Contact from './pages/Contact';
+import Faq from './pages/Faq';
 
 function App() {
 
@@ -35,6 +41,12 @@ function App() {
               <Route path="/about" element={<About/>}/>
               <Route path="/login" element={<Login/>}/>
               <Route path="/dashboard" element={<Dashboard/>}/>
+              <Route path="/new-referrals" element={<NewReferrals/>}/>
+              <Route path="/forgot-password" element={<ForgotPassword/>}/>
+              <Route path="/new-password" element={<NewPassword/>}/>
+              <Route path="/verification" element={<Verification/>}/>
+              <Route path="/contact" element={<Contact/>}/>
+              <Route path="/faq" element={<Faq/>}/>
               <Route path="*" element={<NotFound/>}/>
             </Routes>
           </BrowserRouter>
