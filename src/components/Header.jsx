@@ -69,15 +69,15 @@ function ResponsiveAppBar() {
 
   return (
     <>
-    <AppBar className='header'>
-      <Container maxWidth="xl">
+    <AppBar className='headerv2'>
+      <Container className='costomContainer'>
         <Toolbar disableGutters className="AAAAAAAA">
           
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },

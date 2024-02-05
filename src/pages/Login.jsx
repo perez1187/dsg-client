@@ -11,9 +11,7 @@ function Login() {
   }, []);
   return (
     <LayoutOne>
-      <div  style={{ background: "black" }}>
-        <SignIn />
-      </div>
+      <SignIn />
     </LayoutOne>
   )
 }
