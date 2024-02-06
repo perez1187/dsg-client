@@ -1547,7 +1547,7 @@ p.def_peragraph {
 /**/
 .userPageBox {
   padding: 40px 10px 10px 10px;
-  min-height: 80vh;
+  min-height: 81vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1871,7 +1871,9 @@ a.frgt-link {
 .faq_main {
   padding-top: 20px;
   padding-bottom: 20px;
-  background: #000;
+  background: url(../images/faq-bg.jpg) no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
 }
 h1.def_hed_faq_about {
   color: #FFF;
@@ -1892,12 +1894,13 @@ h1.def_hed_faq_about {
 }
 .accornMainn {
   background: transparent !important;
-  border-radius: 8px;
+  border-radius: 10px !important;
   border: 0.5px solid rgb(255 255 255 / 53%);
   backdrop-filter: blur(7.5px);
-  
+  margin-bottom: 32px;
   .accorn_summry {
     padding: 0 !important;
+    min-height: 80px;
     .MuiAccordionSummary-content {
       margin: 0 !important;
       align-items: center;
@@ -1910,6 +1913,7 @@ h1.def_hed_faq_about {
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+      margin-right: 40px;
       span {
         margin-right: 40px;
       }
@@ -1918,13 +1922,13 @@ h1.def_hed_faq_about {
       border-radius: 0px 8px 8px 0px;
       background: #161A23;
       backdrop-filter: blur(7.5px);
-      width: 86px;
-      height: 80px;
+      min-width: 86px;
+      height: 82px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-left: auto;
       border-radius: 0 8px 8px 0;
+      margin: -1px -1px -1px auto;
       .remove_icon {
         display: none;
       }
@@ -1955,5 +1959,309 @@ h1.def_hed_faq_about {
       font-weight: 400;
       line-height: 36px;
     }
+  }
+}
+@media screen and (max-width: 767px) {
+  h1.def_hed_faq_about {
+    font-size: 30px;
+  }
+  .accornMainn .accorn_summry .MuiAccordionSummary-content {
+    padding-left: 20px;
+  }
+  .accornMainn .accorn_summry p {
+    font-size: 20px;
+    margin-right: 20px;
+  }
+  .accornMainn .accornInnr {
+    padding: 20px 40px 10px 64px;
+  }
+  .accornMainn .accornInnr p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+@media screen and (max-width: 575px) {
+  h1.def_hed_faq_about {
+    font-size: 20px;
+  }
+  .faq_body {
+    padding-top: 24px;
+    padding-right: 40px;
+  }
+  .accornMainn .accorn_summry p {
+    font-size: 13px;
+  }
+  .costomContainer {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  .accornMainn .accorn_summry .button_tap {
+    min-width: 40px;
+    height: 40px;
+    margin: 0 -41px 0 auto;
+  }
+  .faq_innr {
+    width: 100%;
+  }
+  .accornMainn .accorn_summry {
+    min-height: 64px;
+  }
+  .accornMainn .accornInnr {
+    padding: 4px 15px 10px 15px;
+  }
+}
+
+//**//
+.abotScOne {
+  background: url(../images/about_sc_one_bg.png) no-repeat center;
+  background-size: cover;
+  min-height: 625px;
+  background-color: #000;
+}
+.abotUsSc {
+  background: #000;
+  padding-top: 120px;
+  padding-bottom: 100px;
+}
+.abtUsInnr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  h3 {
+    margin-bottom: 38px !important;
+    border-bottom: 3px solid #D50000;
+    padding-bottom: 20px;
+  }
+  p {
+    max-width: 536px;
+  }
+}
+h3.about_def_hed {
+  color: #FFF;
+  font-family: $f_secondary;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+}
+p.about_def_pera {
+  color: #FFF;
+  text-align: justify;
+  font-family: $f_secondary;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+}
+.howWeDoItSc {
+  background: #000;
+}
+.costomContainer1300 {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.how_contentCenter {
+  display: flex;
+  align-items: center;
+}
+.how_content {
+  h3 {
+    line-height: 40px;
+    border-left: 3px solid #D50000;
+    padding-left: 20px;
+    margin-bottom: 26px !important;
+  }
+  p {
+    line-height: 27px;
+    max-width: 686px;
+  }
+}
+.how_content .ourValues {
+  margin-bottom: 40px !important;
+}
+.ourVluInnr {
+  border-right: 3px solid #D50000;
+  padding-right: 30px;
+  h6 {
+    color: #FFF;
+    font-family: $f_secondary;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    margin: 32px 0 !important;
+  }
+  p {
+    color: #FFF;
+    text-align: justify;
+    font-family: $f_secondary;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 1.71px;
+    max-width: 262px;
+  }
+}
+.ourContFlx {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.howWeDoItScV2 {
+  padding-top: 60px;
+}
+.unsplash_img {
+  img {width: 100%;}
+}
+
+@media screen and (max-width: 991px) {
+  h3.about_def_hed {
+    font-size: 30px;
+  }
+  .abotUsSc {
+    padding-top: 80px;
+    padding-bottom: 70px;
+  }
+  .abtUsInnr h3 {
+    margin-bottom: 27px !important;
+    padding-bottom: 11px;
+  }
+  p.about_def_pera {
+    font-size: 18px;    
+    line-height: 25px;
+  }
+  .how_content h3 {
+    margin-bottom: 14px !important;
+    line-height: 34px;
+  }
+  .how_content .ourValues {
+    margin-bottom: 22px !important;
+  }
+  .ourVluInnr h6 {
+    font-size: 18px;
+    margin: 20px 0 !important;
+  }
+  .ourVluInnr p {
+    font-size: 14px;
+  }
+  .ourVluInnr {
+    padding-right: 20px;
+  }
+  .margn_left {
+    margin-left: 20px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .ourContFlx {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .margn_left {
+    margin-left: 0;
+  }
+  .ourVluInnr {
+    border-right: none;
+    border-bottom: 3px solid #D50000;
+    padding-right: 0;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    p {
+      max-width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 575px) {
+  .costomContainer1300 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .abotUsSc {
+    padding-top: 40px;
+    padding-bottom: 50px;
+  }
+  h3.about_def_hed {
+    font-size: 20px;
+  }
+  .abtUsInnr h3 {
+    margin-bottom: 17px !important;
+    padding-bottom: 2px;
+  }
+  p.about_def_pera {
+    font-size: 15px;
+    line-height: 21px;
+  }
+  .how_content h3 {
+    padding-left: 12px;
+  }
+}
+#sc-launcher {
+  .sc-launcher {
+    background-color: $primary-red;
+  }
+  .sc-header {
+    border-radius: 8px 8px 0px 0px;
+    background: linear-gradient(0deg, #181717 0%, #181717 100%), #D9D9D9;
+    box-shadow: none;
+  }
+  .sc-header--team-name {
+    color: #FFF;
+    font-family: $f_secondary;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .sc-chat-window {
+    background: #0B0A0A;
+  }
+  .sc-header--close-button {
+    margin-right: 0;
+    background: rgba(255, 255, 255, 0.20);
+    border-radius: 50%;
+  }
+  .sc-message-list {
+    background: #0B0A0A;
+  }
+  .sc-message--content.sent .sc-message--text {
+    border-radius: 10px 0px 10px 10px;
+    background: #4A4848;
+    padding: 10px 15px;
+    color: #FFF;
+    font-family: $f_secondary;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .sc-message--text {
+    border-radius: 0px 10px 10px 10px;
+    padding: 10px 15px;
+    color: #FFF;
+    font-family: $f_secondary;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    background: #1f1b1b;
+  }
+  .sc-message--file {
+    background: #4A4848;
+  }
+  .sc-user-input--file-icon-wrapper {
+    
+  }
+  .sc-message--file p {
+    color: #FFF;
+    font-family: $f_secondary;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
   }
 }

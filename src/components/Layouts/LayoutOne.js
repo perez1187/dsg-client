@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../Header';
 import StickyFooter from '../Footer/StickyFooter';
+import ChatBox from '../chat/ChatBox';
 
 export default function LayoutOne(props) {
   return (
@@ -8,6 +9,7 @@ export default function LayoutOne(props) {
         <Header />
         {props.children}
         <StickyFooter/>
+        <ChatBox />
     </>
   )
 }
