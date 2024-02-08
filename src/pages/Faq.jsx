@@ -23,7 +23,8 @@ const Faq = () => {
                 <div>
                   <Accordion className='accornMainn'>
                     <AccordionSummary className='accorn_summry'>
-                      <Typography><span>01</span>Lorem ipsum dolor sit amet consectetur. Sagittis id.</Typography>
+                      <Typography className='nombrTxt'>01</Typography>
+                      <Typography>Lorem ipsum dolor sit amet consectetur. Sagittis id.</Typography>
                       <Box className="button_tap">
                         <AddIcon className='add_icon' />
                         <RemoveIcon className='remove_icon' />
@@ -31,24 +32,75 @@ const Faq = () => {
                     </AccordionSummary>
                     <AccordionDetails className='accornInnr'>
                       <Typography>
-                        Lorem ipsum dolor sit amet consectetur. In augue ipsum tellus ultrices. Ac pharetra ultrices consectetur consequat tellus massa. 
-                        Nec aliquam cras sagittis duis sed euismod arcu hac. Ornare amet ligula ornare lacus aliquam aenean. 
+                        Lorem ipsum dolor sit amet consectetur. In augue ipsum tellus ultrices. Ac pharetra ultrices consectetur consequat tellus massa.
+                        Nec aliquam cras sagittis duis sed euismod arcu hac. Ornare amet ligula ornare lacus aliquam aenean.
                       </Typography>
                     </AccordionDetails>
                   </Accordion>
-                  {/* <Accordion>
-                    <AccordionSummary
-                      expandIcon={<ExpandMoreIcon />}
-                      aria-controls="panel2-content"
-                      id="panel2-header"
-                    >
-                      Accordion 2
+                  <Accordion className='accornMainn'>
+                    <AccordionSummary className='accorn_summry'>
+                      <Typography className='nombrTxt'>02</Typography>
+                      <Typography>Lorem ipsum dolor sit amet consectetur. Viverra.</Typography>
+                      <Box className="button_tap">
+                        <AddIcon className='add_icon' />
+                        <RemoveIcon className='remove_icon' />
+                      </Box>
                     </AccordionSummary>
-                    <AccordionDetails>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                      malesuada lacus ex, sit amet blandit leo lobortis eget.
+                    <AccordionDetails className='accornInnr'>
+                      <Typography>
+                        Lorem ipsum dolor sit amet consectetur. In augue ipsum tellus ultrices. Ac pharetra ultrices consectetur consequat tellus massa.
+                        Nec aliquam cras sagittis duis sed euismod arcu hac. Ornare amet ligula ornare lacus aliquam aenean.
+                      </Typography>
                     </AccordionDetails>
-                  </Accordion> */}
+                  </Accordion>
+                  <Accordion className='accornMainn'>
+                    <AccordionSummary className='accorn_summry'>
+                      <Typography className='nombrTxt'>03</Typography>
+                      <Typography>Lorem ipsum dolor sit amet consectetur. Viverra.</Typography>
+                      <Box className="button_tap">
+                        <AddIcon className='add_icon' />
+                        <RemoveIcon className='remove_icon' />
+                      </Box>
+                    </AccordionSummary>
+                    <AccordionDetails className='accornInnr'>
+                      <Typography>
+                        Lorem ipsum dolor sit amet consectetur. In augue ipsum tellus ultrices. Ac pharetra ultrices consectetur consequat tellus massa.
+                        Nec aliquam cras sagittis duis sed euismod arcu hac. Ornare amet ligula ornare lacus aliquam aenean.
+                      </Typography>
+                    </AccordionDetails>
+                  </Accordion>
+                  <Accordion className='accornMainn'>
+                    <AccordionSummary className='accorn_summry'>
+                      <Typography className='nombrTxt'>04</Typography>
+                      <Typography>Lorem ipsum dolor sit amet consectetur. Viverra.</Typography>
+                      <Box className="button_tap">
+                        <AddIcon className='add_icon' />
+                        <RemoveIcon className='remove_icon' />
+                      </Box>
+                    </AccordionSummary>
+                    <AccordionDetails className='accornInnr'>
+                      <Typography>
+                        Lorem ipsum dolor sit amet consectetur. In augue ipsum tellus ultrices. Ac pharetra ultrices consectetur consequat tellus massa.
+                        Nec aliquam cras sagittis duis sed euismod arcu hac. Ornare amet ligula ornare lacus aliquam aenean.
+                      </Typography>
+                    </AccordionDetails>
+                  </Accordion>
+                  <Accordion className='accornMainn'>
+                    <AccordionSummary className='accorn_summry'>
+                      <Typography className='nombrTxt'>05</Typography>
+                      <Typography>Lorem ipsum dolor sit amet consectetur. Viverra.</Typography>
+                      <Box className="button_tap">
+                        <AddIcon className='add_icon' />
+                        <RemoveIcon className='remove_icon' />
+                      </Box>
+                    </AccordionSummary>
+                    <AccordionDetails className='accornInnr'>
+                      <Typography>
+                        Lorem ipsum dolor sit amet consectetur. In augue ipsum tellus ultrices. Ac pharetra ultrices consectetur consequat tellus massa.
+                        Nec aliquam cras sagittis duis sed euismod arcu hac. Ornare amet ligula ornare lacus aliquam aenean.
+                      </Typography>
+                    </AccordionDetails>
+                  </Accordion>
                 </div>
               </Box>
             </Box>

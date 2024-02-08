@@ -13,7 +13,7 @@ const columns = [
   { field: 'deal', headerName: 'Deal', width: 160, },
   { field: 'rakeback', headerName: 'Rakeback', width: 160, },
   { field: 'agentSettlement', headerName: 'Agent Settlement', width: 160, },
-  { field: 'action', headerName: <button className='menuBtn'><MenuIcon /></button>, width: 120, },
+  { field: 'action', headerName: <button className='menuBtn admin_menuBtn'><MenuIcon /></button>, width: 120, },
   
 ];
 
