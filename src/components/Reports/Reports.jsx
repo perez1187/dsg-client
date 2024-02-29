@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Reports.css';
-import { Box, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import DateRangePicker from 'react-bootstrap-daterangepicker';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-daterangepicker/daterangepicker.css';
@@ -56,7 +56,7 @@ const Reports = () => {
       <Typography component='h2' className='def-title'>
         App Report
       </Typography>
-      <Box className='dat_pic_box m-b-24'>
+      <Box className='dat_pic_box m-b-24 cllm-grd'>
         <DateRangePicker
           // startDate={new Date()}
           // endDate={new Date()}
@@ -71,6 +71,7 @@ const Reports = () => {
             <KeyboardArrowDownIcon />
           </button>
         </DateRangePicker>
+        <Button className='resetButton'>Reset</Button>
       </Box>
       <SelectGroup data={data?.agentResultsSummary} />
       <InfoBoxes />

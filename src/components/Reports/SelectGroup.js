@@ -39,6 +39,7 @@ export default function SelectGroup({ data }) {
               sx={{ m: 1, minWidth: 120 }}
               className='def_form_cotrl'
             >
+              <label>App</label>
               <Select
                 value={app}
                 onChange={handleAPPChange}
@@ -57,6 +58,7 @@ export default function SelectGroup({ data }) {
               sx={{ m: 1, minWidth: 120 }}
               className='def_form_cotrl'
             >
+              <label>Union</label>
               <Select
                 value={union}
                 onChange={handleUnionChange}
@@ -75,6 +77,7 @@ export default function SelectGroup({ data }) {
               sx={{ m: 1, minWidth: 120 }}
               className='def_form_cotrl'
             >
+              <label>Club</label>
               <Select
                 value={club}
                 onChange={handleClubChange}
@@ -93,6 +96,7 @@ export default function SelectGroup({ data }) {
               sx={{ m: 1, minWidth: 120 }}
               className='def_form_cotrl'
             >
+              <label>Agent</label>
               <Select
                 value={agent}
                 onChange={handleAgentChange}
@@ -111,6 +115,7 @@ export default function SelectGroup({ data }) {
               sx={{ m: 1, minWidth: 120 }}
               className='def_form_cotrl'
             >
+              <label>Nickname</label>
               <Select
                 value={nickname}
                 onChange={handleNicknameChange}
@@ -129,6 +134,7 @@ export default function SelectGroup({ data }) {
               sx={{ m: 1, minWidth: 120 }}
               className='def_form_cotrl'
             >
+              <label>ID</label>
               <Select
                 value={id}
                 onChange={handleIdChange}

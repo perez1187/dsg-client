@@ -595,6 +595,11 @@ button.menuBtn {
 .def_form_cotrl {
   margin: 0 !important;
   width: 100%;
+  label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #575757;
+  }
   .def_select {
     color: #21272A;
     font-family: $f_primary;
@@ -955,7 +960,19 @@ a.newRfrls_link {
     line-height: normal;
   }
 }
-
+.cllm-grd {
+  justify-content: space-between;
+  align-items: center;
+}
+button.resetButton {
+  background: #333333;
+  color: #fff;
+  border-radius: 15px;
+  padding: 8px 20px;
+  &:hover {
+    background: $primary-red;
+  }
+}
 @media screen and (min-width: 1200px) {
   .poker_bros {
     .costomGrid {
@@ -1006,6 +1023,8 @@ a.newRfrls_link {
   .pokerLinkBx p {
     margin-top: 18px;
   }
+  .cllm-grd { flex-direction: column; }
+  button.resetButton {margin-top: 15px;}
 }
 .dat_pic_boxv2 {
   display: flex;
