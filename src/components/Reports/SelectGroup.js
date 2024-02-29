@@ -1,15 +1,19 @@
-import React from 'react';
-import { Box, Grid } from '@mui/material';
+import React, { useEffect } from 'react';
+import { Box, Button, Grid } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import DateRangePicker from 'react-bootstrap-daterangepicker';
+import { useState } from 'react';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import moment from 'moment';
 
-export default function SelectGroup({ data }) {
+export default function SelectGroup({ data, valueChange }) {
   const [app, setApp] = React.useState('');
-
   const handleAPPChange = (event) => {
     setApp(event.target.value);
   };
+
   const [union, setUnion] = React.useState('');
   const handleUnionChange = (event) => {
     setUnion(event.target.value);
@@ -30,10 +34,65 @@ export default function SelectGroup({ data }) {
   const handleIdChange = (event) => {
     setId(event.target.value);
   };
+
+  ///datepicker
+  const [fromDate, setFromDate] = useState(new Date());
+  const [toDate, setToDate] = useState(new Date());
+  const range = {
+    Today: [moment(), moment()],
+    Yesterday: [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+    'This Month': [moment().startOf('month'), moment().endOf('month')],
+    'Last Month': [
+      moment().subtract(1, 'month').startOf('month'),
+      moment().subtract(1, 'month').endOf('month'),
+    ],
+    'Last Year': [
+      moment().subtract(1, 'year').startOf('year'),
+      moment().subtract(1, 'year').endOf('year'),
+    ],
+  };
+
+  const handleEvent = (event, picker) => {
+    setFromDate(picker.startDate._d.toISOString());
+    setToDate(picker.endDate._d.toISOString());
+  };
+
+  useEffect(() => {
+    valueChange({
+      app: app,
+      union: union,
+      club: club,
+      agent: agent,
+      nickname: nickname,
+      nickname_id: id,
+      startDate: moment(new Date(fromDate)).format('YYYY-MM-DD'),
+      endDate: moment(new Date(toDate)).format('YYYY-MM-DD'),
+    });
+  }, [app, union, club, agent, nickname, id, fromDate, toDate]);
+
   return (
     <>
       <Box className='select_boxMain m-b-24'>
         <Grid container spacing={[1, 2]}>
+          <Box className='dat_pic_box m-b-24 cllm-grd'>
+            <DateRangePicker
+              // startDate={new Date()}
+              // endDate={new Date()}
+              ranges={range}
+              alwaysShowCalendars={true}
+              onEvent={handleEvent}
+            >
+              <button className='def_date_pickr'>
+                {moment(fromDate).format('LL')}
+                &nbsp; - &nbsp;
+                {moment(toDate).format('LL')}
+                <KeyboardArrowDownIcon />
+              </button>
+            </DateRangePicker>
+            <Button className='resetButton'>Reset</Button>
+          </Box>
           <Grid item xs={6} md={2} sm={6}>
             <FormControl
               sx={{ m: 1, minWidth: 120 }}

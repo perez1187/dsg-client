@@ -5,7 +5,7 @@ import DateRangePicker from 'react-bootstrap-daterangepicker';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-daterangepicker/daterangepicker.css';
 import moment from 'moment';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+
 import ClubPlayersAgentsInUsd from './ClubPlayersAgentsInUsd';
 import SelectGroup from './SelectGroup';
 import InfoBoxes from './InfoBoxes';
@@ -15,65 +15,27 @@ import { useEffect } from 'react';
 import { getAgentResultDetilsSummary } from './helper';
 
 const Reports = () => {
-  ///datepicker
-  const [fromDate, setFromDate] = useState(new Date());
-  const [toDate, setToDate] = useState(new Date());
-  const range = {
-    Today: [moment(), moment()],
-    Yesterday: [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-    'This Month': [moment().startOf('month'), moment().endOf('month')],
-    'Last Month': [
-      moment().subtract(1, 'month').startOf('month'),
-      moment().subtract(1, 'month').endOf('month'),
-    ],
-    'Last Year': [
-      moment().subtract(1, 'year').startOf('year'),
-      moment().subtract(1, 'year').endOf('year'),
-    ],
-  };
-
-  const handleEvent = (event, picker) => {
-    console.log('start: ', picker.startDate._d);
-    console.log('end: ', picker.endDate._d);
-    setFromDate(picker.startDate._d.toISOString());
-    setToDate(picker.endDate._d.toISOString());
-  };
-
   const [data, setData] = useState();
   useEffect(() => {
-    const getData = async () => {
-      const dataRes = await getAgentResultDetilsSummary();
-
-      setData(dataRes);
-    };
     getData();
   }, []);
+
+  const getData = async (value) => {
+    const dataRes = await getAgentResultDetilsSummary(value);
+    setData(dataRes);
+  };
+
+  const refetchData = async (data) => {
+    getData(data);
+  };
 
   return (
     <>
       <Typography component='h2' className='def-title'>
         App Report
       </Typography>
-      <Box className='dat_pic_box m-b-24 cllm-grd'>
-        <DateRangePicker
-          // startDate={new Date()}
-          // endDate={new Date()}
-          ranges={range}
-          alwaysShowCalendars={true}
-          onEvent={handleEvent}
-        >
-          <button className='def_date_pickr'>
-            {moment(fromDate).format('LL')}
-            &nbsp; - &nbsp;
-            {moment(toDate).format('LL')}
-            <KeyboardArrowDownIcon />
-          </button>
-        </DateRangePicker>
-        <Button className='resetButton'>Reset</Button>
-      </Box>
-      <SelectGroup data={data?.agentResultsSummary} />
+
+      <SelectGroup data={data?.agentResultsSummary} valueChange={refetchData} />
       <InfoBoxes />
       <ClubPlayersAgentsInUsd />
       <ClubAgentsInUsd data={data} />

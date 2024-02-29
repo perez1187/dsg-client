@@ -27,8 +27,28 @@ export const transformDataDetails = (data) => {
   });
 };
 
-export async function getAgentResultDetilsSummary() {
+export async function getAgentResultDetilsSummary(value) {
   const axios = getAxiosInstance();
+
+  const query = value
+    ? '?startDate=' +
+      value.startDate +
+      '&finishDate=' +
+      value.endDate +
+      '&app=' +
+      value?.app +
+      '&union=' +
+      value?.union +
+      '&club=' +
+      value?.club +
+      '&agent=' +
+      value?.agent +
+      '&nickname=' +
+      value?.nickname +
+      '&nickname_id=' +
+      value?.nickname_id
+    : '';
+  console.log(query);
   const res = await axios.get('/results/agent-results-details-summary/', {
     headers: {
       Authorization: 'Bearer ' + process.env.REACT_APP_TEMP_BEARER_TOKEN,
