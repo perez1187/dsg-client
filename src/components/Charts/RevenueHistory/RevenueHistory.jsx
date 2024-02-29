@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, useEffect, useState } from 'react';
 import {
   BarChart,
   Bar,
@@ -11,26 +11,31 @@ import {
   ReferenceLine,
   ResponsiveContainer,
 } from 'recharts';
-import { Box, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material';
 // css
-import './RevenueHistory.css'
+import './RevenueHistory.css';
 
 // data
-import { revHistory } from '../../../data/data';
+// import { revHistory } from '../../../data/data';
+import { getAgentResultSummary, transformData } from './helper';
 
-
-
-
-
-export default class Example extends PureComponent {
-  static demoUrl = 'https://codesandbox.io/s/bar-chart-with-positive-negative-i3b8b';
-
-  render() {
-    return (
-      <Box className="cmmn-box">
-        <Typography component="h4" className='cmmn-box-title'>Revenue History</Typography>
-        <Box className="chart-box">
-        <ResponsiveContainer width="100%" height="100%" className={'rev'}>
+const Example = () => {
+  const [revHistory, setRevHistory] = useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      const data = await getAgentResultSummary();
+      const tranData = transformData(data.agentResults.by_date);
+      setRevHistory(tranData);
+    };
+    getData();
+  }, []);
+  return (
+    <Box className='cmmn-box'>
+      <Typography component='h4' className='cmmn-box-title'>
+        Revenue History
+      </Typography>
+      <Box className='chart-box'>
+        <ResponsiveContainer width='100%' height='100%' className={'rev'}>
           <BarChart
             width={500}
             height={300}
@@ -42,18 +47,18 @@ export default class Example extends PureComponent {
               bottom: 5,
             }}
           >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
+            <CartesianGrid strokeDasharray='3 3' />
+            <XAxis dataKey='name' />
             <YAxis />
             <Tooltip />
             <Legend />
-            <ReferenceLine y={0} stroke="#000" />
-            <Bar dataKey="revenue" fill="#C1C7CD" />
+            <ReferenceLine y={0} stroke='#000' />
+            <Bar dataKey='revenue' fill='#C1C7CD' />
           </BarChart>
-          </ResponsiveContainer>
-        </Box>
+        </ResponsiveContainer>
       </Box>
+    </Box>
+  );
+};
 
-    );
-  }
-}
+export default Example;
