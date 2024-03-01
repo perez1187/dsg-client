@@ -49,11 +49,14 @@ export async function getAgentResultDetilsSummary(value) {
       value?.nickname_id
     : '';
   console.log(query);
-  const res = await axios.get('/results/agent-results-details-summary/', {
-    headers: {
-      Authorization: 'Bearer ' + process.env.REACT_APP_TEMP_BEARER_TOKEN,
-    },
-  });
+  const res = await axios.get(
+    '/results/agent-results-details-summary/' + query,
+    {
+      headers: {
+        Authorization: 'Bearer ' + process.env.REACT_APP_TEMP_BEARER_TOKEN,
+      },
+    }
+  );
   return res.data;
 }
 
