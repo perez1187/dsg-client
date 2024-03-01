@@ -76,23 +76,26 @@ export default function SelectGroup({ data, valueChange }) {
     <>
       <Box className='select_boxMain m-b-24'>
         <Grid container spacing={[1, 2]}>
-          <Box className='dat_pic_box m-b-24 cllm-grd'>
-            <DateRangePicker
-              // startDate={new Date()}
-              // endDate={new Date()}
-              ranges={range}
-              alwaysShowCalendars={true}
-              onEvent={handleEvent}
-            >
-              <button className='def_date_pickr'>
-                {moment(fromDate).format('LL')}
-                &nbsp; - &nbsp;
-                {moment(toDate).format('LL')}
-                <KeyboardArrowDownIcon />
-              </button>
-            </DateRangePicker>
-            <Button className='resetButton'>Reset</Button>
-          </Box>
+          <Grid item xs={12} md={12} sm={12}>
+            <Box className='dat_pic_box m-b-24 cllm-grd'>
+              <DateRangePicker
+                // startDate={new Date()}
+                // endDate={new Date()}
+                ranges={range}
+                alwaysShowCalendars={true}
+                onEvent={handleEvent}
+              >
+                <button className='def_date_pickr'>
+                  {moment(fromDate).format('LL')}
+                  &nbsp; - &nbsp;
+                  {moment(toDate).format('LL')}
+                  <KeyboardArrowDownIcon />
+                </button>
+              </DateRangePicker>
+              <Button className='resetButton'>Reset</Button>
+            </Box>
+          </Grid>
+          
           <Grid item xs={6} md={2} sm={6}>
             <FormControl
               sx={{ m: 1, minWidth: 120 }}
