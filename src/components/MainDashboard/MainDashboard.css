@@ -1,0 +1,59 @@
+.MainDashboard{
+    width: 95rem;
+    height: 70rem;
+    /* flex-shrink: 0; */
+    margin: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    /* background: #F2F4F8; */
+    /* position: relative; */
+    gap: 1.5rem;
+    /* background: red; */
+    /* align-items: center;
+    justify-content: center; */
+    
+}
+
+.dashTitle{
+    color: var(--CoolGray-80, #343A3F);
+    /* Heading/2 */
+    font-family: Roboto;
+    font-size: 2.625rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%; /* 2.8875rem */    
+}
+
+.dashRev{
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    /* align-items: center; */
+    /* gap: 1rem; */
+    /* flex: 1 0 0;     */
+    border: 1px solid var(--CoolGray-20, #DDE1E6);
+    background: var(--Default-White, #FFF);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);    
+}
+
+.dashRev > span:nth-of-type(1) {
+    color: var(--CoolGray-60, #697077);
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 1.4rem */
+  }
+
+  .dashRev > span:nth-of-type(2) {
+    color: var(--CoolGray-90, #21272A);
+    font-family: Roboto;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%; /* 1.65rem */
+}
+
+.RevenueHistory{
+    background: white;
+}

@@ -1,0 +1,139 @@
+.Sidebar {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-top: 4rem;
+    transition: all 300ms ease;
+    background: white;
+    left: 0;
+  }
+
+  .logo {
+    display: flex;
+    height: 5rem;
+    font-weight: bold;
+    font-size: 22px;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    height: 4%;
+    background: red;
+  }
+
+  /* targetujemy img inside logo */
+  .logo > img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .logo > span > span {
+    color: var(--pink);
+  }
+
+  /* menu */
+.menu {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: var(--CoolGray-100, #121619);
+    font-family: "Source Sans Pro";
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+
+  }
+  .menuItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    height: 2.5rem;
+    margin-left: 2rem;
+    position: relative;
+    transition: all 300ms ease;
+    border-radius: 0.7rem;
+    font-size: 14px;
+  }
+
+  .menuItem:hover {
+    cursor: pointer;
+  }
+
+  /* to jest logout */
+  .menu .menuItem:last-child {
+    position: absolute;
+    bottom: 2.3rem;
+    width: 100%;
+  }
+
+  /* wybrana podstrona */
+  .active {
+    background: red;
+    margin-left: 0;
+    /* color: white; */
+    color: #FFF;
+
+    font-family: Inter;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.25rem; /* 142.857% */
+    letter-spacing: -0.0175rem;
+  }
+
+  /* pink pasek po lewej  */
+  .active::before {
+    content: "";
+    width: 8px;
+    height: 100%;
+    /* background: #A2A9B0; */
+    /* margin righ  bo margin left menuItem 2rem, a width 8px*/
+    margin-right: calc(1rem - 8px); 
+    
+  }
+
+  /* Tablets */
+@media screen and (max-width: 1200px) {
+  .menuItem>span{
+    display: none;
+  }
+  .logo{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar{
+    position: fixed;
+    z-index: 9;
+    background: #ffe0e0;
+    width: 55%;
+    padding-right: 1rem;
+    height: 100%;
+  }
+  .menuItem>span{
+    display: block;
+  }
+  .logo{
+    display: flex;
+  }
+  .menu .menuItem:last-child {
+    position: relative;
+    margin-top: 6rem;
+  }
+  .bars{
+    display: flex;
+    position: fixed;
+    top: 2rem;
+    left:60%;
+    background:#ffe0e0;
+    padding:10px;
+    border-radius: 10px;
+    z-index: 9;
+  }
+  .close{
+    left: -60%;
+  }
+}
